@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -108,4 +108,40 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+} */
+
+html,
+body,
+#root {
+	min-height: 100vh;
+}
+
+body {
+	margin: 0;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(
+		135deg,
+		#1a0b2e 0%,
+		#180a2a 7.14%,
+		#150a26 14.29%,
+		#130922 21.43%,
+		#11081e 28.57%,
+		#0e071a 35.71%,
+		#0c0716 42.86%,
+		#0a0612 50%,
+		#0a0612 100%
+	);
+	color: white;
+}
+
+#root {
+	width: 100%;
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
 }
