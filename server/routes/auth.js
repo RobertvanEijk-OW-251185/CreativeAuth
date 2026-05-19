@@ -8,9 +8,13 @@ const User = require("../models/User.js");
 //
 
 router.post("/register", async (req, res) => {
-	const user = new User(req.body);
-	await user.save();
-	res.send("User registered!");
+	try {
+		const user = new User(req.body);
+		await user.save();
+		res.status(201).json({ message: "User registered!", user });
+	} catch (err) {
+		res.status(400).json({ error: err.message });
+	}
 });
 
 //
@@ -18,12 +22,17 @@ router.post("/register", async (req, res) => {
 //
 
 router.post("/login", async (req, res) => {
-	const user = await User.findOne({ email: req.body.email });
-	if (!user) return res.send("User not found...");
+	try {
+		const user = await User.findOne({ email: req.body.email });
+		if (!user) return res.status(404).json({ message: "User not found..." });
 
-	if (user.password !== req.body.password) return res.send("Wrong password");
+		if (user.password !== req.body.password)
+			return res.status(401)({ message: "Wrong password" });
 
-	res.send("Login successful");
+		res.status(200).json({ message: "Login successful" });
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
 });
 
 // Get all Users
