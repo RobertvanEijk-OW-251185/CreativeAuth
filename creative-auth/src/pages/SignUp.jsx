@@ -6,34 +6,78 @@ import PasswordPicker from "../components/PasswordPicker";
 import { BrowserRouter, Link } from "react-router-dom";
 import { useState } from "react";
 
+import { registerUser } from "../api";
+
 function SignUp() {
-	const [fullname, setFullname] = useState("");
-	const [email, setEmail] = useState("");
+	// const [fullname, setFullname] = useState("");
+	// const [email, setEmail] = useState("");
 
 	// console.log(fullname);
 	// console.log(email);
 	// console.log(password);
 
-	const [password, setPassword] = useState([]);
-	const [confirmPassword, setConfirmPassword] = useState([]);
+	// const [password, setPassword] = useState([]);
+	// const [confirmPassword, setConfirmPassword] = useState([]);
 
 	// console.log("password:", password);
 	// console.log("confirmPassword:", confirmPassword);
 
+	const register = () => {
+		const [formData, setFormData] = useState({
+			name: "",
+			email: "",
+			password: "",
+		});
+	};
+
+	const handleChange = () => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
+	const [fullname, setFullname] = useState("");
+	const [email, setEmail] = useState("");
+
+	const [password, setPassword] = useState([]);
+	const [confirmPassword, setConfirmPassword] = useState([]);
+
 	const [samePassword, setSamePassword] = useState(false);
 
-	const handleSubmit = () => {
-		if (password.join(",") === confirmPassword.join(",")) {
-			setSamePassword(true);
-		} else {
-			setSamePassword(false);
-		}
+	// const handleSubmit = () => {
+	// 	if (password.join(",") === confirmPassword.join(",")) {
+	// 		setSamePassword(true);
+	// 	} else {
+	// 		setSamePassword(false);
+	// 	}
 
-		console.log("Name:", fullname);
-		console.log("Email:", email);
-		console.log("Password:", password);
-		console.log("Confirm Password:", confirmPassword);
-		console.log("Is Password Same:", samePassword);
+	// 	console.log("Name:", fullname);
+	// 	console.log("Email:", email);
+	// 	console.log("Password:", password);
+	// 	console.log("Confirm Password:", confirmPassword);
+	// 	console.log("Is Password Same:", samePassword);
+	// };
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		try {
+			const res = await registerUser(formData);
+			console.log("Registered:", res.data);
+			// redirect or show success message here
+
+			// console checks
+			// console.log("Name:", fullname);
+			// console.log("Email:", email);
+			// console.log("Password:", password);
+			// console.log("Confirm Password:", confirmPassword);
+			// console.log("Is Password Same:", samePassword);
+
+			if (password.join(",") === confirmPassword.join(",")) {
+				setSamePassword(true);
+			} else {
+				setSamePassword(false);
+			}
+		} catch (err) {
+			console.error(err.response.data);
+		}
 	};
 
 	return (
