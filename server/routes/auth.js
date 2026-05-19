@@ -26,6 +26,17 @@ router.post("/login", async (req, res) => {
 	res.send("Login successful");
 });
 
+// Get all Users
+
+router.get("/allUsers", async (req, res) => {
+	try {
+		const allUsers = await User.find({});
+		res.status(200).json(allUsers);
+	} catch (err) {
+		res.status(500).json({ error: err.message });
+	}
+});
+
 // Exports
 module.exports = router;
 
@@ -33,16 +44,16 @@ module.exports = router;
 // Create New User
 //
 
-router.post("/router", async (req, res) => {
-	const { name, email, password } = req.body;
+// router.post("/router", async (req, res) => {
+// 	const { name, email, password } = req.body;
 
-	try {
-		const user = new User({ name, email, password });
-		await user.save();
-		res.status(201).json(user);
-	} catch (err) {
-		res.status(400).json({ err: err.message });
-	}
-});
+// 	try {
+// 		const user = new User({ name, email, password });
+// 		await user.save();
+// 		res.status(201).json(user);
+// 	} catch (err) {
+// 		res.status(400).json({ err: err.message });
+// 	}
+// });
 
-module.exports = router;
+// module.exports = router;
