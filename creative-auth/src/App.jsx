@@ -124,6 +124,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 // import pages
 import SignUp from "./Pages/SignUp";
 import SignIn from "./Pages/SignIn";
+import DashboardPage from "./pages/Dashboard";
 
 function App() {
 	return (
@@ -133,6 +134,7 @@ function App() {
 					<Route path="/" element={<Navigate replace to="/signin" />} />
 					<Route path="/signin" element={<SignIn />} />
 					<Route path="/signup" element={<SignUp />} />
+					<Route path="/dashboard" element={<DashboardPage />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

@@ -82,7 +82,7 @@
 	align-self: stretch;
 
 	border-radius: 0.625rem;
-	opacity: 0.38; /* currently not working, will change when it works */
+	/* opacity: 0.38; currently not working, will change when it works */
 	background: linear-gradient(90deg, #9810fa 0%, #c800de 100%);
 	box-shadow:
 		0 10px 15px -3px rgba(89, 22, 139, 0.5),

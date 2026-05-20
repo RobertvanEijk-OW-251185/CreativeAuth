@@ -44,7 +44,7 @@ function SignUp() {
 
 			console.log("Registered:", res?.data.message);
 			setSuccess("Account Created!! :)");
-			// console.log(success);
+			console.log(success);
 			navigate("/SignIn");
 		} catch (err) {
 			// console.error(err.response.data);
@@ -105,7 +105,11 @@ function SignUp() {
 				/>
 
 				{/* Maybe Error here??????? */}
-				{error && <span style={{ color: "red" }}>{error}</span>}
+				{error && (
+					<span className="extra-info" style={{ color: "red" }}>
+						{error}
+					</span>
+				)}
 
 				<button className="signUp" onClick={handleSubmit}>
 					Sign Up

@@ -1,0 +1,8 @@
+.logged-in-user {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	align-self: stretch;
+}
