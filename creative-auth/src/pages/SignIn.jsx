@@ -32,10 +32,14 @@ function SignIn() {
 
 		try {
 			const res = await loginUser({
+				name: name,
 				email: email,
 				password: password.join(""),
 			});
 
+			console.log("Full response:", res.data);
+
+			localStorage.setItem("user", JSON.stringify(res.data.user)); // sends signed in user's info to localStorage for later use
 			console.log("Logged in:", res.data.message);
 			setSuccess("Login was successful!! :)");
 			navigate("/dashboard");

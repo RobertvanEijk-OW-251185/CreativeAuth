@@ -76,7 +76,8 @@
 
 .user-name,
 .user-email {
-	align-self: stretch;
+	/* align-self: stretch; */
+	align-self: flex-start;
 
 	color: #f4f4f5;
 	font-family: Inter;
@@ -150,7 +151,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 2rem;
 
 	border-radius: 1rem;
 	border: 1px solid rgba(173, 70, 255, 0.2);
@@ -208,4 +209,24 @@
 	font-weight: 400;
 	line-height: 1.5rem; /* 100% */
 	letter-spacing: 0.00544rem;
+}
+
+.delete-user {
+	display: flex;
+	height: 2.25rem;
+	padding: 0.625rem 1.25rem;
+	justify-content: center;
+	align-items: center;
+	align-self: stretch;
+
+	border-radius: 1.25rem;
+	background: linear-gradient(135deg, #ad46ff 0%, #a800b7 100%);
+
+	color: #fff;
+	font-family: Inter;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1.5rem; /* 150% */
+	letter-spacing: -0.0195rem;
 }

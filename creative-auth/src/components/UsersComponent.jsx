@@ -1,4 +1,4 @@
-function AllUsersComponent() {
+function AllUsersComponent({ name, email }) {
 	return (
 		<div>
 			<div className="other-user">
@@ -6,9 +6,10 @@ function AllUsersComponent() {
 					<span className="ou-icon">◆</span>
 				</div>
 				<div className="other-user-info">
-					<span className="ou-name">Name here</span>
-					<span className="ou-email">Email here</span>
+					<span className="ou-name">{name || "Unknown User"}</span>
+					<span className="ou-email">{email || "Unknown Email"}</span>
 				</div>
+				<button className="delete-user">Delete User</button>
 			</div>
 		</div>
 	);
