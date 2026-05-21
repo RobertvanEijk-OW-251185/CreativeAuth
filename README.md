@@ -80,8 +80,7 @@ video link here
 
 ## User Flow Diagram
 
-
-## Entity-Relationship Diagram (ERD)
+![User Flow Diagram](creative-auth/src/assets/creativeauth_user_flow.svg)
 
 ---
  
