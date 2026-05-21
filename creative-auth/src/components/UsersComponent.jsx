@@ -9,7 +9,8 @@ function AllUsersComponent({ name, email }) {
 					<span className="ou-name">{name || "Unknown User"}</span>
 					<span className="ou-email">{email || "Unknown Email"}</span>
 				</div>
-				<button className="delete-user">Delete User</button>
+				{/* Didn't have time to make this functional :( */}
+				{/* <button className="delete-user">Delete User</button> */}
 			</div>
 		</div>
 	);

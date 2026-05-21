@@ -27,6 +27,10 @@ app.get("/", (req, res) => {
 // 	.then(() => console.log("MongoDB connected!!"))
 // 	.catch((err) => console.log(err));
 
+// bcrypt and salt
+const bcrypt = require("bcrypt");
+const User = require("./models/User");
+
 // Connect MongoDB
 mongoose
 	.connect(process.env.MONGO_URI)
