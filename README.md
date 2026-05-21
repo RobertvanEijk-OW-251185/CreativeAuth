@@ -3,6 +3,30 @@
 A full-stack MERN (MongoDB, Express, React, Node.js) authentication application that replaces traditional text-based passwords with a unique colour sequence picker. Users register and sign in by selecting a sequence of colours, providing a more visual and creative approach to authentication.
  
 ---
+ 
+## Project Overview
+ 
+CreativeAuth is a MERN stack web application developed as part of a full-stack development tutorial. The project demonstrates core concepts in RESTful API design, React component architecture, MongoDB data persistence, and client-server communication via Axios.
+ 
+Rather than a conventional password field, users interact with a custom `PasswordPicker` component that records a sequence of colour selections. This sequence is stored as a string and, after being encrypted, used for both registration and authentication. As an added personal challenge, this project also aims to complete the full CRUD cycle, allowing users to create an account, read existing accounts, update a signed-in account, and delete other accounts (Note: this was not possible, unfortunately; however, I will add it as soon as possible...).
+
+---
+
+## Screenshots
+
+![Sign Up Page Empty](creative-auth/src/assets/SignUpPage.png)
+![Sign In Page Empty](creative-auth/src/assets/SignInPage.png)
+![Sign Up Page Filled Out](creative-auth/src/assets/SignUpPageFilled.png)
+![Sign In Page Filled Out](creative-auth/src/assets/SignInPageFilled.png)
+![Dashboard](creative-auth/src/assets/DashboardPage.png)
+
+---
+
+## Demo Video
+
+### Google Doc Link to Video:
+
+video link here
 
 ---
  
@@ -14,16 +38,8 @@ A full-stack MERN (MongoDB, Express, React, Node.js) authentication application 
 - [Setup & Installation](#setup--installation)
 - [API Endpoints](#api-endpoints)
 - [Project Structure](#project-structure)
-- [Mock Ups](#mock-ups)
 - [License](#license)
----
- 
-## Project Overview
- 
-CreativeAuth is a MERN stack web application developed as part of a full-stack development tutorial. The project demonstrates core concepts in RESTful API design, React component architecture, MongoDB data persistence, and client-server communication via Axios.
- 
-Rather than a conventional password field, users interact with a custom `PasswordPicker` component that records a sequence of colour selections. This sequence is stored as a string and, after being encrypted, used for both registration and authentication. As an added personal challenge, this project also aims to complete the full CRUD cycle, allowing users to create an account, read existing accounts, update a signed-in account, and delete other accounts.
- 
+
 ---
  
 ## Features
@@ -211,12 +227,6 @@ creativeauth/
 │
 └── README.md
 ```
- 
----
- 
-## Mock Ups
- 
-
  
 ---
  
