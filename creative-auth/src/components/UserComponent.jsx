@@ -9,6 +9,7 @@ function LoggedInUserComponent() {
 
 	const handleSignout = () => {
 		localStorage.removeItem("user"); // clears user data from local storage after sign out
+		localStorage.removeItem("token");
 		navigate("/SignIn");
 	};
 
@@ -25,9 +26,10 @@ function LoggedInUserComponent() {
 					</div>
 				</div>
 				<div className="user-actions">
-					<button className="edit-user" onClick={() => navigate("/dashboard")}>
+					{/* Didn't have time to make this functional :( */}
+					{/* <button className="edit-user" onClick={() => navigate("/dashboard")}>
 						<span className="edit">Edit User</span>
-					</button>
+					</button> */}
 					<button className="sign-out" onClick={() => handleSignout()}>
 						<span className="signOut">Sign Out</span>
 					</button>
